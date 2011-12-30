@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewUsersTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewUsersLabel_login}"/>
+                    <h:outputText value="#{usersController.selected.login}" title="#{bundle.ViewUsersTitle_login}"/>
+                    <h:outputText value="#{bundle.ViewUsersLabel_name}"/>
+                    <h:outputText value="#{usersController.selected.name}" title="#{bundle.ViewUsersTitle_name}"/>
+                    <h:outputText value="#{bundle.ViewUsersLabel_password}"/>
+                    <h:outputText value="#{usersController.selected.password}" title="#{bundle.ViewUsersTitle_password}"/>
+                    <h:outputText value="#{bundle.ViewUsersLabel_secname}"/>
+                    <h:outputText value="#{usersController.selected.secname}" title="#{bundle.ViewUsersTitle_secname}"/>
+                    <h:outputText value="#{bundle.ViewUsersLabel_patronymic}"/>
+                    <h:outputText value="#{usersController.selected.patronymic}" title="#{bundle.ViewUsersTitle_patronymic}"/>
+                    <h:outputText value="#{bundle.ViewUsersLabel_phone}"/>
+                    <h:outputText value="#{usersController.selected.phone}" title="#{bundle.ViewUsersTitle_phone}"/>
+                    <h:outputText value="#{bundle.ViewUsersLabel_roleuser}"/>
+                    <h:outputText value="#{usersController.selected.roleuser}" title="#{bundle.ViewUsersTitle_roleuser}"/>
+                    <h:outputText value="#{bundle.ViewUsersLabel_id}"/>
+                    <h:outputText value="#{usersController.selected.id}" title="#{bundle.ViewUsersTitle_id}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{usersController.destroyAndView}" value="#{bundle.ViewUsersDestroyLink}"/>
+                <br />
+                <br />
+                <h:commandLink action="Edit" value="#{bundle.ViewUsersEditLink}"/>
+                <br />
+                <h:commandLink action="#{usersController.prepareCreate}" value="#{bundle.ViewUsersCreateLink}" />
+                <br />
+                <h:commandLink action="#{usersController.prepareList}" value="#{bundle.ViewUsersShowAllLink}"/>
+                <br />
+                <br />
+                <h:commandLink value="#{bundle.ViewUsersIndexLink}" action="/index" immediate="true" />
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

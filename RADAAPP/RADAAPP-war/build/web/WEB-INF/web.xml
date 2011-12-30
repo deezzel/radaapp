@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+    <!--    <context-param>
+        <param-name>javax.faces.PROJECT_STAGE</param-name>
+        <param-value>Production</param-value>
+    </context-param>-->
+    <!--    <parameter-encoding default-charset="UTF-8"/>-->
+    <context-param>
+        <param-name>primefaces.THEME</param-name>
+        <param-value>aristo</param-value>
+    </context-param>
+    <context-param>
+        <param-name>javax.faces.PROJECT_STAGE</param-name>
+        <param-value>Development</param-value>
+    </context-param>
+    <context-param>
+        <param-name> parameter-encoding </param-name>
+        <param-value>default-charset="UTF-8"</param-value>
+    </context-param>
+    <filter>
+        <filter-name>CharsetFilter</filter-name>
+        <filter-class>com.jsf.util.CharsetFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>CharsetFilter</filter-name>
+        <url-pattern>*.xhtml</url-pattern>
+    </filter-mapping>
+    <servlet>
+        <servlet-name>Faces Servlet</servlet-name>
+        <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <!--TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT 
+    <servlet>
+        <servlet-name>Resource Servlet</servlet-name>
+        <servlet-class>
+org.primefaces.resource.ResourceServlet
+        </servlet-class>
+        <load-on-startup>2</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Resource Servlet</servlet-name>
+        <url-pattern>/primefaces_resource/*</url-pattern>
+    </servlet-mapping>
+  -->
+    <servlet-mapping>
+        <servlet-name>Faces Servlet</servlet-name>
+        <url-pattern>/faces/*</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    <welcome-file-list>
+        <welcome-file>faces/index.xhtml</welcome-file>
+    </welcome-file-list>
+    <error-page>
+        <error-code>403</error-code>
+        <location>/Login_Fail.xhtml</location>
+    </error-page>
+    <security-constraint>
+        <display-name>Add New for Secretary</display-name>
+        <web-resource-collection>
+            <web-resource-name>AddNews_Secret</web-resource-name>
+            <description>AddNews_Secret</description>
+            <url-pattern>/AddNews_Secret.xhtml</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <description>AddNews_Secret</description>
+            <role-name>secretary</role-name>
+            <role-name>admin</role-name>
+        </auth-constraint>
+    </security-constraint>
+    <security-constraint>
+        <display-name>index</display-name>
+        <web-resource-collection>
+            <web-resource-name>index</web-resource-name>
+            <description>index</description>
+            <url-pattern>/index.xhtml</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <description>index</description>
+            <role-name>admin</role-name>
+            <role-name>secretary</role-name>
+            <role-name>user</role-name>
+        </auth-constraint>
+    </security-constraint>
+    <login-config>
+        <auth-method>FORM</auth-method>
+        <realm-name>ldap-realm</realm-name>
+        <form-login-config>
+            <form-login-page>/login.xhtml</form-login-page>
+            <form-error-page>/Login_Fail.xhtml</form-error-page>
+        </form-login-config>
+    </login-config>
+    <security-role>
+        <description/>
+        <role-name>admin</role-name>
+    </security-role>
+    <security-role>
+        <description/>
+        <role-name>secretary</role-name>
+    </security-role>
+    <security-role>
+        <description/>
+        <role-name>user</role-name>
+    </security-role>
+</web-app>

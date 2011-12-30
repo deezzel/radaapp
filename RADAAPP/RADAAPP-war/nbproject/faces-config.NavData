@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scene Scope="Project" version="2">
+    <Scope Scope="Faces Configuration Only">
+        <Node id="com.jsf/users/hh.xhtml" x="400" y="300" zoom="false"/>
+        <Node id="index.xhtml" x="270" y="78" zoom="true"/>
+    </Scope>
+    <Scope Scope="Project">
+        <Node id="com.jsf/users/hh.xhtml" x="400" y="300" zoom="true"/>
+        <Node id="index.jsp" x="150" y="150" zoom="true"/>
+        <Node id="Laws_Comment.xhtml" x="1650" y="150" zoom="true"/>
+        <Node id="template_old.xhtml" x="650" y="450" zoom="true"/>
+        <Node id="template.xhtml" x="400" y="150" zoom="true"/>
+        <Node id="com.jsf/users/Login.xhtml" x="900" y="150" zoom="true"/>
+        <Node id="News_Comment.xhtml" x="150" y="750" zoom="true"/>
+        <Node id="UserRegistration.xhtml" x="650" y="300" zoom="true"/>
+        <Node id="AddSession_Secret.xhtml" x="400" y="900" zoom="true"/>
+        <Node id="com.jsf/users/UserRegistration.xhtml" x="40" y="263" zoom="true"/>
+        <Node id="Login_Fail.xhtml" x="150" y="300" zoom="true"/>
+        <Node id="UpdateSession.xhtml" x="641" y="235" zoom="true"/>
+        <Node id="AddArticle_Secret.xhtml" x="900" y="450" zoom="true"/>
+        <Node id="com.jsf/users/List.xhtml" x="650" y="150" zoom="true"/>
+        <Node id="backup/UserRegistration.xhtml" x="1900" y="150" zoom="true"/>
+        <Node id="UpdateDecision.xhtml" x="1400" y="300" zoom="true"/>
+        <Node id="UpdateArticle.xhtml" x="400" y="450" zoom="true"/>
+        <Node id="UpdateNews.xhtml" x="650" y="600" zoom="true"/>
+        <Node id="AddNews_Secret.xhtml" x="900" y="600" zoom="true"/>
+        <Node id="articles.xhtml" x="519" y="101" zoom="true"/>
+        <Node id="Laws.xhtml" x="410" y="380" zoom="true"/>
+        <Node id="login.xhtml" x="900" y="750" zoom="true"/>
+        <Node id="sessions.xhtml" x="444" y="12" zoom="true"/>
+        <Node id="DecisionByLaw.xhtml" x="150" y="900" zoom="true"/>
+        <Node id="AddDecision.xhtml" x="1400" y="150" zoom="true"/>
+        <Node id="index.xhtml" x="223" y="52" zoom="false"/>
+        <Node id="AddLaw_Deputatos.xhtml" x="1150" y="150" zoom="true"/>
+        <Node id="backup/search.xhtml" x="1650" y="300" zoom="true"/>
+        <Node id="Article_Comment.xhtml" x="1150" y="450" zoom="true"/>
+        <Node id="search.xhtml" x="1400" y="450" zoom="true"/>
+        <Node id="backup/template.xhtml" x="150" y="1050" zoom="true"/>
+        <Node id="backup/Login.xhtml" x="650" y="750" zoom="true"/>
+        <Node id="Questions.xhtml" x="1150" y="600" zoom="true"/>
+        <Node id="Session.xhtml" x="194" y="379" zoom="true"/>
+        <Node id="com.jsf/users/View.xhtml" x="150" y="450" zoom="true"/>
+        <Node id="UpdateLaw.xhtml" x="400" y="750" zoom="true"/>
+    </Scope>
+    <Scope Scope="All Faces Configurations">
+        <Node id="com.jsf/users/hh.xhtml" x="400" y="300" zoom="true"/>
+        <Node id="index.xhtml" x="270" y="78" zoom="true"/>
+    </Scope>
+</Scene>

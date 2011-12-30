@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/rada/!svn/ver/3/trunk/RADAAPP-war/web/WEB-INF
+END
+faces-config.xml
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/rada/!svn/ver/5/trunk/RADAAPP-war/web/WEB-INF/faces-config.xml
+END
+sun-web.xml
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/rada/!svn/ver/3/trunk/RADAAPP-war/web/WEB-INF/sun-web.xml
+END
+web.xml
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/rada/!svn/ver/5/trunk/RADAAPP-war/web/WEB-INF/web.xml
+END

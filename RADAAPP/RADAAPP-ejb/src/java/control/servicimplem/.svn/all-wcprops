@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/rada/!svn/ver/3/trunk/RADAAPP-ejb/src/java/control/servicimplem
+END
+ProtocolService.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/rada/!svn/ver/6/trunk/RADAAPP-ejb/src/java/control/servicimplem/ProtocolService.java
+END
+SecretaryService.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/rada/!svn/ver/6/trunk/RADAAPP-ejb/src/java/control/servicimplem/SecretaryService.java
+END
+ShipmentService.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/rada/!svn/ver/6/trunk/RADAAPP-ejb/src/java/control/servicimplem/ShipmentService.java
+END
+UserService.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/rada/!svn/ver/6/trunk/RADAAPP-ejb/src/java/control/servicimplem/UserService.java
+END
+DecisionService.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/rada/!svn/ver/6/trunk/RADAAPP-ejb/src/java/control/servicimplem/DecisionService.java
+END
+PublicationService.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/rada/!svn/ver/6/trunk/RADAAPP-ejb/src/java/control/servicimplem/PublicationService.java
+END
+CommentService.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/rada/!svn/ver/6/trunk/RADAAPP-ejb/src/java/control/servicimplem/CommentService.java
+END
+DeputatService.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/rada/!svn/ver/6/trunk/RADAAPP-ejb/src/java/control/servicimplem/DeputatService.java
+END
+LawService.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/rada/!svn/ver/6/trunk/RADAAPP-ejb/src/java/control/servicimplem/LawService.java
+END

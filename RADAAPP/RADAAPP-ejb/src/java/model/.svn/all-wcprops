@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/rada/!svn/ver/3/trunk/RADAAPP-ejb/src/java/model
+END
+Comment.java
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/rada/!svn/ver/3/trunk/RADAAPP-ejb/src/java/model/Comment.java
+END
+Sessions.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/rada/!svn/ver/3/trunk/RADAAPP-ejb/src/java/model/Sessions.java
+END
+Decision.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/rada/!svn/ver/3/trunk/RADAAPP-ejb/src/java/model/Decision.java
+END
+Publication.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/rada/!svn/ver/6/trunk/RADAAPP-ejb/src/java/model/Publication.java
+END
+Shipment.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/rada/!svn/ver/6/trunk/RADAAPP-ejb/src/java/model/Shipment.java
+END
+Protocol.java
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/rada/!svn/ver/6/trunk/RADAAPP-ejb/src/java/model/Protocol.java
+END
+Secretary.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/rada/!svn/ver/3/trunk/RADAAPP-ejb/src/java/model/Secretary.java
+END
+Users.java
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/rada/!svn/ver/3/trunk/RADAAPP-ejb/src/java/model/Users.java
+END
+Deputatos.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/rada/!svn/ver/3/trunk/RADAAPP-ejb/src/java/model/Deputatos.java
+END
+Laws.java
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/rada/!svn/ver/3/trunk/RADAAPP-ejb/src/java/model/Laws.java
+END

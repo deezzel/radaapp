@@ -1,0 +1,41 @@
+10
+
+dir
+5
+http://svn.stu.cn.ua/svn/rada/trunk/RADAAPP-war/src/java/com/jsf
+http://svn.stu.cn.ua/svn/rada
+
+
+
+2011-10-26T07:40:26.932711Z
+5
+durda
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+71bc3adf-b539-e011-869f-0018f311b54d
+
+
+
+
+
+
+0
+
+beans
+dir
+
+util
+dir
+

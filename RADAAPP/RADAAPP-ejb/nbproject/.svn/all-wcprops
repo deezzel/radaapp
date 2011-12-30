@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/rada/!svn/ver/3/trunk/RADAAPP-ejb/nbproject
+END
+project.xml
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/rada/!svn/ver/3/trunk/RADAAPP-ejb/nbproject/project.xml
+END
+ant-deploy.xml
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/rada/!svn/ver/3/trunk/RADAAPP-ejb/nbproject/ant-deploy.xml
+END
+build-impl.xml
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/rada/!svn/ver/3/trunk/RADAAPP-ejb/nbproject/build-impl.xml
+END
+project.properties
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/rada/!svn/ver/3/trunk/RADAAPP-ejb/nbproject/project.properties
+END
+genfiles.properties
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/rada/!svn/ver/3/trunk/RADAAPP-ejb/nbproject/genfiles.properties
+END

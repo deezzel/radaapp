@@ -1,0 +1,171 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package model;
+
+import java.io.Serializable;
+import java.util.Date;
+import java.util.List;
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
+import model.baseclass.BaseEntity;
+
+/**
+ *
+ * @author Julia
+ */
+@Entity
+@Table(name = "shipment", catalog = "rada", schema = "")
+@XmlRootElement
+@NamedQueries({
+    @NamedQuery(name = "Shipment.findAllByOrderName", query = "SELECT s FROM Shipment s ORDER BY s.name"),
+    @NamedQuery(name = "Shipment.findAll", query = "SELECT s FROM Shipment s"),
+    @NamedQuery(name = "Shipment.findById", query = "SELECT s FROM Shipment s WHERE s.id = :id"),
+    @NamedQuery(name = "Shipment.findByCountDep", query = "SELECT s FROM Shipment s WHERE s.countDep = :countDep"),
+    @NamedQuery(name = "Shipment.findByDateCreate", query = "SELECT s FROM Shipment s WHERE s.dateCreate = :dateCreate"),
+    @NamedQuery(name = "Shipment.findByDescript", query = "SELECT s FROM Shipment s WHERE s.descript = :descript"),
+    @NamedQuery(name = "Shipment.findByHead", query = "SELECT s FROM Shipment s WHERE s.head = :head"),
+    @NamedQuery(name = "Shipment.findByName", query = "SELECT s FROM Shipment s WHERE s.name = :name")})
+public class Shipment extends BaseEntity implements Serializable {
+    private static final long serialVersionUID = 1L;
+    
+    @Basic(optional = false)
+    @NotNull
+    @Column(name = "count_dep", nullable = false)
+    private int countDep;
+    @Column(name = "date_create")
+    @Temporal(TemporalType.DATE)
+    private Date dateCreate;
+    @Size(max = 255)
+    @Column(name = "descript", length = 255)
+    private String descript;
+    @Size(max = 50)
+    @Column(name = "Head", length = 50)
+    private String head;
+    @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 25)
+    @Column(name = "Name", nullable = false, length = 25)
+    private String name;
+    @OneToMany(mappedBy = "shipment")
+    private List<Deputatos> deputatosList;
+
+    public void addDeput (Deputatos deput) {
+        if (null != deputatosList && null !=deput) {
+            deputatosList.add(deput);
+        } else {
+          //  
+        }
+    }
+    
+      public void delDeput (Deputatos deput) {
+        if (null != deputatosList && null !=deput) {
+            deputatosList.remove(deput);
+        } else {
+          //  
+        }
+    }
+    
+    public Shipment() {
+    }
+
+    public Shipment(Long id) {
+        this.id = id;
+    }
+
+    public Shipment(Long id, int countDep, String name) {
+        this.id = id;
+        this.countDep = countDep;
+        this.name = name;
+    }
+
+    public int getCountDep() {
+        return countDep;
+    }
+
+    public void setCountDep(int countDep) {
+        this.countDep = countDep;
+    }
+
+    public Date getDateCreate() {
+        return dateCreate;
+    }
+
+    public void setDateCreate(Date dateCreate) {
+        this.dateCreate = dateCreate;
+    }
+
+    public String getDescript() {
+        return descript;
+    }
+
+    public void setDescript(String descript) {
+        this.descript = descript;
+    }
+
+    public String getHead() {
+        return head;
+    }
+
+    public void setHead(String head) {
+        this.head = head;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    @XmlTransient
+    public List<Deputatos> getDeputatosList() {
+        return deputatosList;
+    }
+
+    public void setDeputatosList(List<Deputatos> deputatosList) {
+        this.deputatosList = deputatosList;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 0;
+        hash += (id != null ? id.hashCode() : 0);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        // TODO: Warning - this method won't work in the case the id fields are not set
+        if (!(object instanceof Shipment)) {
+            return false;
+        }
+        Shipment other = (Shipment) object;
+        if (((this.id == null && other.id != null)
+                || (this.id != null && !this.id.equals(other.id)))
+                || ((this.name == null && other.name != null)
+                || (this.name != null && !this.name.equals(other.name)))) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "model.Shipment[ id=" + id + ", name=" +name + ", count_dep=" + countDep +" ]";
+    }
+    
+}

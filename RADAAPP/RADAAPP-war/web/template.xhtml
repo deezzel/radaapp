@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.prime.com.tr/ui"
+
+      xmlns:c="http://java.sun.com/jsp/jstl/core">
+    <h:head>
+        <title>Rada</title>
+        <h:outputStylesheet name="css/jsfcrud.css"/>
+    </h:head>
+    <h:body>
+
+<!--        <p:scrollPanel style="width: auto; height:auto; border: none" scrollMode="native" >-->
+            <div id="div1">
+                <p:layout  style="height: 635px; border: none; font-size: 14px">  
+
+                    <p:layoutUnit position="north" style="height: 80px; border: none" size="121">  
+                        <p:panel id="headpanel">
+                            <div id="logo-image">
+                                <img src="images/ggg.png" width="72px" height="78px"/>
+                            </div>
+                            
+                            <div id="logotype">
+                                <p>Информацоинно справочная система "Рада"</p>
+                            </div>
+                            <div style="position: absolute;top: 5px;left:650px">
+                                <h:outputLabel style="position: absolute;left:50px" value="Добро пожаловать: "/><h:outputText style="position: absolute;top:18px; left:140px" value="#{userManagedBean.loginUserName}"/>
+                                <h:form>
+                                <c:if test="${userManagedBean.currentUser==null}">
+                                    
+                                    <p:lightBox widgetVar="loginlb" iframe="false" width="42%" height="33%">  
+                                <h:outputLink value="http://localhost:8080/RADAAPP-war/faces/com.jsf/users/Login.xhtml" 
+                                              style="float: right; margin-right: 10px"> 
+                                  <h:commandButton value="Вход в cистему"  style="float: right; position: absolute;top: 50px;left:50px; font-size: 11px"/>
+                                </h:outputLink>  
+                            </p:lightBox>
+                        
+                            <p:lightBox widgetVar="reglb" iframe="true" width="47%" height="75%">  
+                                <h:outputLink value="http://localhost:8080/RADAAPP-war/faces/UserRegistration.xhtml" 
+                                              style="float: right; margin-right: 10px"> 
+                                    <h:commandButton  value="Регистрация" style="float: right; position: absolute;top: 50px;left:150px; font-size: 11px"/>  
+                                </h:outputLink>  
+                            </p:lightBox>
+                            
+                       </c:if>
+                        <c:if test="${userManagedBean.currentUser!=null}"> 
+<!--                            <h:outputText value="{userManagedBean.hello}" style ="float: right"/> -->
+                            <p></p>
+                            <br></br>
+                            <h:commandButton  value="Выйти" action="#{userManagedBean.logout}" style="float: right;"/> 
+                        </c:if>
+                                </h:form>
+<!--                                <h:outputLabel value="Logged in user is: "/><h:outputText value="{userManagedBean.loginUserName}"/>-->
+                            </div>
+                            <p:menu widgetVar="menu_news" style="border: none;background-color: transparent; position: absolute;top: 61px;left: 205px;width: 170px">
+
+                                <p:menuitem value="Главная страница" url="index.xhtml" icon="ui-icon ui-icon-home"/>  
+
+                            </p:menu>
+                            <p:menu widgetVar="menu_articles" style="border: none;background-color: transparent; position: absolute;top: 61px;left: 385px;width: 90px">
+
+                                <p:menuitem value="  Статьи" url="articles.xhtml" icon="ui-icon ui-icon-document" />  
+
+                            </p:menu>
+                            <p:menu widgetVar="menu_laws" style="border: none;background-color: transparent; position: absolute;top: 61px;left: 485px;width: 95px">
+                                <p:menuitem value="Законы" url="Laws.xhtml" icon="ui-icon ui-icon-flag"/>  
+                            </p:menu>
+                            <p:menu widgetVar="menu_sessions" style="border: none;background-color: transparent; position: absolute;top: 61px;left: 590px;width: 95px">
+                                <p:menuitem value="Сессии" url="sessions.xhtml" icon="ui-icon ui-icon-gear"/>  
+                            </p:menu>
+                        </p:panel>  
+                    </p:layoutUnit>  
+                    <p:layoutUnit position="west" style="height: 810px; border: none" size="220">  
+                        <h:form>
+                            <p:menu style="width: auto">  
+                                <p:submenu label="Навигация">  
+                                    <p:menuitem value="Домашняя страница" url="index.xhtml" icon="ui-icon ui-icon-home"/>  
+                                    <p:menuitem url="index.xhtml" value="Новости" icon="ui-icon ui-icon-star"/>  
+                                    <p:menuitem url="articles.xhtml" value="Статьи" icon="ui-icon ui-icon-document"/>
+                                    <p:menuitem url="Laws.xhtml" value="Законы" icon="ui-icon ui-icon-flag"/>
+                                    <p:menuitem url="sessions.xhtml" value="Сессии" icon="ui-icon ui-icon-gear"/>
+                                </p:submenu>  
+                            </p:menu>  </h:form> 
+                            <h:form>
+                            <p:menu style="width: auto">
+                                <p:submenu label="Поиск">
+                                    <p:menuitem>
+                                        <p:calendar value="#{searchMB.date}"/>
+                                        <p:separator style="display: none; height: 2px"/>
+                                        
+                                        
+                                        <p:commandButton action="#{searchMB.serchByDate()}" ajax="false" image="ui-icon-search"/>
+                                    </p:menuitem>
+
+                                </p:submenu>
+                                
+                                <p:submenu label="Глобальный поиск">
+                                    <p:menuitem>
+                                        <p:inputText widgetVar="search" value="#{searchMB.substr}" />
+                                        <p:separator style="display: none; height: 2px"/>
+                                        
+                                        
+                                            <p:commandButton action="#{searchMB.publSerch}" ajax="false" image="ui-icon-search"/>
+                                        
+<!--                                        <p:button outcome="search.xhtml" image="ui-icon-search">
+                                            <h:commandLink action=""/>
+                                        </p:button>-->
+                                        
+                                        
+<!--                                        <h:outputLink   value="search.xhtml">
+                                            <h:commandLink value="S" />
+                                            <h:commandButton value="S"/>
+                                        </h:outputLink>-->
+<!--                                        <p:commandButton image="ui-icon-search">-->
+                                        
+                                    </p:menuitem>
+                                </p:submenu>
+
+                            </p:menu>
+                        </h:form>
+                    </p:layoutUnit>  
+
+
+                    <p:layoutUnit position="center" style="height: 800px; border: none" size="800">  
+                        <ui:insert name="body"/>
+                        
+                    </p:layoutUnit> 
+                    <p:layoutUnit position="south" size="80" style="border: none">
+                        <p:panel id="footerpanel" style="height: 60px">
+                            <p style="text-align: center">Copyright by Durda J., Mihelson A. and Tereschenko K. KS-071/2</p>
+                        </p:panel>
+                    </p:layoutUnit>
+                </p:layout>
+
+            </div>
+<!--        </p:scrollPanel>-->
+    </h:body>
+</html>

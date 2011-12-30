@@ -1,0 +1,70 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package control.servicimplem;
+
+import control.ILawsService;
+import java.util.Date;
+import java.util.List;
+import javax.ejb.Stateless;
+import javax.ejb.LocalBean;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import model.Laws;
+
+/**
+ *
+ * @author Julia
+ */
+@Stateless
+@LocalBean
+public class LawService extends Generic<Laws> implements ILawsService {
+    @PersistenceContext(unitName = "RADAAPP-ejbPU")
+    private EntityManager em;
+
+    public LawService() {
+        super(Laws.class);
+    }
+    
+    @Override
+    public List<Laws> getByTitle(String title) {
+        if (!title.equals("")) {
+            return (List<Laws>)em.createNamedQuery("Laws.findByTitle").setParameter("title", title).getResultList();
+        }
+        return null;
+    }
+
+    @Override
+    public List<Laws> getByDate(Date date) {
+        if (null != date) {
+            return (List<Laws>)em.createNamedQuery("Laws.findByTimeAccept").setParameter("timeAccept", date);
+        }
+        return null;
+    }
+
+    @Override
+    public List<Laws> getBySession(Long sess_id) {
+        if (null != sess_id) {
+            return (List<Laws>)em.createNamedQuery("Laws.findBySession").setParameter("session",sess_id);
+        }
+        return null;
+    }
+
+    @Override
+    public List<Laws> findByText(String text) {
+      //  throw new UnsupportedOperationException("Not supported yet.");
+        return (List<Laws>)em.createNamedQuery("Laws.findByText").setParameter("descript", text).getResultList();
+    }
+    // Add business logic below. (Right-click in editor and choose
+    // "Insert Code > Add Business Method")
+
+    @Override
+    protected EntityManager getEntityManager() {
+        return em;
+    }
+
+    public void persist(Object object) {
+        em.persist(object);
+    }
+}

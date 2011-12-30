@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.prime.com.tr/ui">
+    <h:head>
+        <h:outputStylesheet name="jsfcrud.css" library="css"/>
+        <p:resources/>
+        <title>Registration</title>
+    </h:head>
+    <body>
+
+
+    <p:panel header="Регистрация">
+        <h:form>
+            <p:messages id="msg" showDetail="false"/>      
+            <h:panelGrid columns="2">
+
+                <h:outputText value="Имя*" />  
+                <p:inputText value="#{regManBean.name}"/>
+                <h:outputText value="Фамилия*" />  
+                <p:inputText value="#{regManBean.secname}"/>
+                <h:outputText value="Отчество" />  
+                <p:inputText value="#{regManBean.patronymic}" />
+                <h:outputText value="Телефон" />  
+                <p:inputMask value="#{regManBean.phone}" mask="999-999-9999"/>
+                <h:outputText value="Email*" />  
+                <p:inputText value="#{regManBean.name}"/>
+                <h:outputText value="Логин*" />  
+                <p:inputText value="#{regManBean.login}"/>
+                <h:outputText value="Пароль*" />  
+                <p:password value="#{regManBean.password}" minLength="6"/>
+                <h:outputText value="Повторите пароль*" />  
+                <p:password value="#{regManBean.repasswd}" minLength="6"/>
+            </h:panelGrid>
+            <p:panel style="margin-bottom: 10px; border: #ffffff; margin-right: -17px">
+            <!--            <p: style="border-left:  #ffffff; float: right">-->
+            <h:commandButton value="Зарегистрироваться" action="#{regManBean.registaration}"  style="float: right"/>
+            <h:commandButton value="Отмена" action="#{regManBean.registaration}" style="float: right"/>
+            </p:panel>
+            <!--            </p:panel>-->
+        </h:form>
+    </p:panel>
+
+</body>
+</html>
+
+
+
+  <!--                <span>RePassword<span style="color:#ff0000">*</span></span>
+                                              <p:password value="" inline="true"/>-->

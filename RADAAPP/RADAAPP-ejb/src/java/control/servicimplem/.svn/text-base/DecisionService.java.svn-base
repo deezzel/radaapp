@@ -1,0 +1,45 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package control.servicimplem;
+
+import control.IDecisionService;
+import java.beans.DesignMode;
+import javax.ejb.Stateless;
+import javax.ejb.LocalBean;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import model.Decision;
+
+/**
+ *
+ * @author Julia
+ */
+@Stateless
+@LocalBean
+public class DecisionService extends Generic<Decision> implements IDecisionService {
+
+    @PersistenceContext(unitName = "RADAAPP-ejbPU")
+    private EntityManager em;
+
+    public DecisionService() {
+        super(Decision.class);
+    }
+
+    @Override
+    public Decision getByLaw(Long id) {
+        return (Decision)em.createNamedQuery("Decision.findByLaw").setParameter("law", id).getSingleResult();
+    }
+
+    // Add business logic below. (Right-click in editor and choose
+    // "Insert Code > Add Business Method")
+    @Override
+    protected EntityManager getEntityManager() {
+        return em;
+    }
+
+    public void persist(Object object) {
+        em.persist(object);
+    }
+}

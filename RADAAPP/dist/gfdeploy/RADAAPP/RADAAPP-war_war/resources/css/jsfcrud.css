@@ -1,0 +1,178 @@
+root { 
+    display: block;
+}
+
+body {
+    font-family: fantasy;
+    color: #3a4f54;
+/*    background-color: #dfecf1;*/
+    font-size: 14px;
+    padding: 0% 5% 0% 5%
+}
+
+a {
+    color: #e33b06;
+}
+
+table {
+    empty-cells: show;
+}
+
+form.jsfcrud_list_form th, td th {
+    font-size: x-small;
+    color: #4e6a71;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-right-style: solid;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-color: #b2d5d6;
+    border-bottom-color: #b2d5d6;
+    border-left-color: #90b4bd;
+    border-right-color: #90b4bd;
+    letter-spacing: 3px;
+    text-align: left;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 6px;
+    padding-right: 6px;
+    background-color: #b2d5d6;
+}
+
+td {
+    vertical-align: top;
+    padding-bottom: 8px;
+    font-size: small;
+}
+
+form.jsfcrud_list_form td, td td {
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-right-style: solid;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-color: #b2d5d6;
+    border-bottom-color: #b2d5d6;
+    border-left-color: #b2d5d6;
+    border-right-color: #b2d5d6;
+    vertical-align: baseline;
+    padding-bottom: 0px;
+}
+
+tr.jsfcrud_odd_row {
+    background-color: #fefeff;
+    color: #4e6a71;
+}
+
+
+tr.jsfcrud_even_row {
+    background-color: #eff5fa;
+    color: #4e6a71;
+}
+
+#busyImage {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+#headpanel{
+   padding: 0;
+    height: 100px;
+    border: none;
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#C4C4C4;
+  background-image:-webkit-gradient(linear, 0 100%, 0 0%, from(rgba(255, 255, 255, 0.796875)), to(rgba(255, 255, 255, 0)));
+  background-image:-moz-linear-gradient(top,lightgray,white);
+  background-image: -o-linear-gradient(top,rgba(255, 255, 255, 0),rgba(255, 255, 255, 0.796875));
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+}
+
+#footerpanel{
+   padding: 0;
+    height: 100px;
+    border: none;
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#C4C4C4;
+  background-image:-webkit-gradient(linear, 0 100%, 0 0%, from(rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, 0.796875)));
+  background-image:-moz-linear-gradient(top,white,lightgray);
+  background-image: -o-linear-gradient(top,rgba(255, 255, 255, 0.796875),rgba(255, 255, 255, 0));
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+}
+
+#logo-image{
+    position: absolute;
+    top: 7px;
+    left: 50px;
+    margin: 0 auto;
+    
+}
+#logo-image-gerb{
+    position: absolute;
+    top: 7px;
+    right: 50px;
+    margin: 0 auto;
+}
+#logotype{
+    position: absolute;
+    top: 2px;
+    left: 175px;
+    right: 175px;
+    text-align: center;
+    font-family: sans-serif;
+    font: italic;
+    font-weight: 400;
+}
+
+/*  navigation  */
+#header #nav {
+	position: absolute;
+	margin: 0; padding: 0;		
+	width: 880px;	
+	left: 170px;	top: 55px;		
+}
+#header #nav ul {
+	float: left;	
+	list-style: none;	
+/*	margin: 5px 0 0 0;*/
+	height: 25px;
+/*	padding: 0 0 0 15px;					*/
+}
+#header #nav ul li {
+	float: left;
+/*	margin: 0; padding: 0 0 0 10px;		*/
+}
+#header #nav ul li a {
+	float: left;
+/*	margin: 0;*/
+        padding-right: 20px;
+/*	padding: 0 15px 0 5px;*/
+	color: #666666;
+	font: bold 14px/40px 'Trebuchet MS', 'Helvetica Neue', Arial, Sans-Serif;
+/*	text-transform: uppercase;	*/
+}
+#header #nav ul li a:hover, 
+#header #nav ul li a:active {
+	border: none;
+	color: #111;
+	background: transparent;
+}
+#header #nav ul li#current {
+	background: transparent url(/images/left-tab.gif) no-repeat;	
+}
+#header #nav ul li#current a {	
+	color: #444;
+	background: transparent url(/images/right-tab.gif) no-repeat right top;	
+}
+

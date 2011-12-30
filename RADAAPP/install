@@ -1,0 +1,3 @@
+#!/bin/bash
+ant -f build.xml run
+opera http://localhost:8080/RADAAPP-war/faces/index.xhtml

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--<?xml-stylesheet type="text/css" charset="utf-8" media="all" href="com.jsf/newcss.css"?>-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.prime.com.tr/ui"
+      xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <ui:composition template="/template.xhtml">
+        <ui:define name="body">
+            <h:form prependId="false" id="forma">
+                <p:panel id="lst_protocol">
+                    <h:outputLabel value="Время проведение сессии:"/>
+                    <h:outputText value="#{sessmb.currSess.timeleadthrou}" ></h:outputText>
+                    <p></p>
+                    <h:outputLabel value="Голова сессии:"/>
+                    <h:outputText value="#{sessmb.currSess.headsession}" ></h:outputText>
+                    <p></p>
+                    <h:outputLabel value="Количество участников сессии:"/>
+                    <h:outputText value="#{sessmb.currSess.countparticipants}" ></h:outputText>
+                    <p></p>
+                    <h:outputLabel value="Pассматриваемые вопросы:"/>
+                    <p:commandButton value="Добавить вопрос" ajax="true" image="ui-icon-plus" onclick="addQuestion.show()"
+                                     style ="float: right" rendered="#{userManagedBean.currentUser.roleuser=='2'}" /> <p/>
+                    <p:dataGrid   value="#{sessmb.lstProtocol}" var="protocol" columns="1"  
+                                  rows="4" paginator="false">                  
+                        <p:column>
+                            <strong><h:outputText value="#{protocol.text}" style="float: left" /></strong> &nbsp;
+                            <!--                            <h:outputLabel value="{protocol.deputat.name} {protocol.deputat.secname}"/>-->
+                            <!--                             ajax="true" image="ui-icon-plus" update="form"          -->
+                            <!--                            <c:if test="">-->
+                            <!--                                
+                                                            <p:commandButton title="Добавиться в вопрос" ajax="true" image="ui-icon-plus" update="forma" style="float: right" action="{sessmb.addToProtocol()}" rendered="">
+                                                                <f:setPropertyActionListener target="{sessmb.id_protocol}" value="{protocol.id}"/>
+                                                                <f:setPropertyActionListener target="{sessmb.id_deput}" value="{userManagedBean.currentUser.id}"/>
+                                                            </p:commandButton>-->
+
+                            <!--                            </c:if>-->
+
+                            <p:commandButton  title="Удалить вопрос" ajax="true"  image="ui-icon-trash" update="lst_protocol" style ="float: right" action="#{sessmb.removeProtocol()}" rendered="#{userManagedBean.currentUser.roleuser=='2'}">
+                                <f:setPropertyActionListener target="#{sessmb.id_protocol}" value="#{protocol.id}"/>
+                            </p:commandButton>
+
+                        </p:column>
+                    </p:dataGrid> 
+
+                    <p:button value="Информация о вопросе" outcome="Questions" style ="float: right" rendered="#{userManagedBean.secretaryOrDeputatos}">
+                        <f:param name ="id_sess" value="#{sessmb.currSess.id}"/>
+                    </p:button>
+                    <p/>
+
+                    <h:outputLabel value="Pассматриваемые законы:" rendered="#{sessmb.lstLawsBySession!=null}"/>
+                    <p:dataGrid value="#{sessmb.lstLawsBySession}" var="laws" columns="1"  
+                                rows="4" paginator="false" id="laws_sess">                  
+                        <p:column>
+                            <c:if test="#{userManagedBean.currentUser.roleuser=='2'}">
+                                <p:button title="Добавить решение" outcome="AddDecision" image="ui-icon-plus" style="float: left; font-size: 10px" disabled="#{laws.decision!=null}">
+                                    <f:param name="id_law" value="#{laws.id}"/>
+                                </p:button>
+                            </c:if>
+                            <h:outputLink value="Laws_Comment.xhtml">
+                                <f:param name="id_law" value="#{laws.id}"/>
+                                <strong><h:outputText value="#{laws.title}" style="float: left" /></strong>
+                            </h:outputLink>
+                            <c:if test="#{userManagedBean.secretaryOrDeputatos}">
+                                <p:button value="Решение" outcome="DecisionByLaw" style ="float: right; font-size: 10px" disabled="#{laws.decision==null}">
+                                    <f:param name="id_law" value="#{laws.id}"/>
+                                </p:button>
+                            </c:if>
+                            <br></br>
+                        </p:column>
+                    </p:dataGrid>
+                    <br/>
+
+                    <p:commandButton value="Добавить закон" image="ui-icon-plus" oncomplete="addLaws.show()"
+                                     style ="float: right" rendered="#{userManagedBean.currentUser.roleuser=='2'}"/>
+
+                    <p:dialog widgetVar="addLaws">
+                        <p:selectOneMenu value="#{sessmb.law}" style="float: right">
+                            <f:selectItem itemLabel="Добавить новый закон" itemValue="#{laws.id}"/>
+                            <f:selectItems value="#{sessmb.lstLawSess}" var ="laws" itemLabel="#{laws.title}" itemValue="#{laws.id}"/>
+                        </p:selectOneMenu>
+                        <p:commandButton value="Добавить" ajax="true" update="lst_protocol" action="#{sessmb.addLawToSession()}" oncomplete="addLaws.hide()" style ="float: right" />
+                    </p:dialog>
+
+                    <p:dialog widgetVar="addQuestion" >
+                        <h:panelGrid columns="2">
+                            <h:outputLabel value="Вопрос: "/>
+                            <p:inputText value="#{sessmb.currProtocol.text}"/>
+                            <h:outputLabel value="Время добавления вопроса: "/>
+                            <p:calendar value="#{sessmb.currProtocol.timeWhenReg}"/>
+                        </h:panelGrid>
+                        <p:commandButton value="Добавить вопрос" ajax="true" update="lst_protocol" action="#{sessmb.addProtocol()}" oncomplete="addQuestion.hide()" style ="float: right" />
+                    </p:dialog>
+
+                </p:panel>
+            </h:form> 
+
+
+        </ui:define>
+
+    </ui:composition>
+</html>
+

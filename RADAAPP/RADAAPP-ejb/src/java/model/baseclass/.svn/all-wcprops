@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/rada/!svn/ver/3/trunk/RADAAPP-ejb/src/java/model/baseclass
+END
+Public_Type.java
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/rada/!svn/ver/3/trunk/RADAAPP-ejb/src/java/model/baseclass/Public_Type.java
+END
+Users_Role.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/rada/!svn/ver/3/trunk/RADAAPP-ejb/src/java/model/baseclass/Users_Role.java
+END
+UserBase.java
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/rada/!svn/ver/3/trunk/RADAAPP-ejb/src/java/model/baseclass/UserBase.java
+END
+BaseEntity.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/rada/!svn/ver/3/trunk/RADAAPP-ejb/src/java/model/baseclass/BaseEntity.java
+END
+Session_Type.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/rada/!svn/ver/3/trunk/RADAAPP-ejb/src/java/model/baseclass/Session_Type.java
+END

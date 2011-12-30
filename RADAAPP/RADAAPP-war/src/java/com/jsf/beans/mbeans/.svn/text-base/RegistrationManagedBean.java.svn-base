@@ -1,0 +1,118 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.jsf.beans.mbeans;
+
+import com.jsf.util.JsfUtil;
+import control.servicimplem.UserService;
+import javax.ejb.EJB;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
+import model.Users;
+
+/**
+ *
+ * @author Julia
+ */
+@ManagedBean (name="regManBean")
+@SessionScoped
+public class RegistrationManagedBean {
+
+    @EJB
+    private UserService userService;
+    //private Users current;
+    private String login;
+    private String password;
+    private String name;
+    private String secname;
+    private String patronymic;
+    private String email;
+    private String phone;
+    private String repasswd;
+    
+     public static String passwd="123456";
+    public String mess;
+
+    public String getRepasswd() {
+        return repasswd;
+    }
+
+    public void setRepasswd(String repasswd) {
+        this.repasswd = repasswd;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getLogin() {
+        return login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getPatronymic() {
+        return patronymic;
+    }
+
+    public void setPatronymic(String patronymic) {
+        this.patronymic = patronymic;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getSecname() {
+        return secname;
+    }
+
+    public void setSecname(String secname) {
+        this.secname = secname;
+    }
+ 
+    /** Creates a new instance of RegistrationManagedBean */
+    public RegistrationManagedBean() {
+    }
+    
+    
+     public void registaration () {
+        // Long id = new Long(2);
+         if (password.equals(repasswd)) {
+                if (null !=login & null !=name & null!=password & null !=secname) {
+        Users us = new Users(login, name, password, secname, "user");
+            userService.create(us);
+         }
+                else   JsfUtil.addErrorMessage("Put all parameters!");
+         }
+     else  JsfUtil.addErrorMessage("Repassword and password don't the same");
+    }
+
+   }

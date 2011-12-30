@@ -1,0 +1,81 @@
+10
+
+dir
+3
+http://svn.stu.cn.ua/svn/rada/trunk
+http://svn.stu.cn.ua/svn/rada
+
+
+
+2011-10-09T20:03:47.663973Z
+3
+durda
+has-props
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+71bc3adf-b539-e011-869f-0018f311b54d
+
+
+
+
+
+
+0
+
+RADAAPP-ejb
+dir
+
+RADAAPP-war
+dir
+
+build.xml
+file
+
+
+
+
+2011-10-04T11:30:28.281000Z
+42f015dabac8ef9049c1de0d1cf4cb57
+2011-10-09T20:03:47.663973Z
+3
+durda
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2799
+
+nbproject
+dir
+
+src
+dir
+

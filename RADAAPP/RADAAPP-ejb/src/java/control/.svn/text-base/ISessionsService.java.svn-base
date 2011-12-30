@@ -1,0 +1,27 @@
+/**
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+package control.iservices;
+import java.util.Date;
+import java.util.List;
+import model.Sessions;
+
+/**
+ *
+ * @author Julia
+ */
+public interface ISessionsService {
+    
+    public void add_session (Sessions sess);
+    
+    public void del_session (Long id);
+    
+    public void update_session (Long id);
+    
+    public List<Sessions> getByOrderDate ();
+    
+    public List<Sessions> findByDate (Date date);
+       
+}

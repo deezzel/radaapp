@@ -1,0 +1,28 @@
+10
+
+dir
+0
+http://svn.stu.cn.ua/svn/rada/trunk/RADAAPP-war/web/com.jsf/secretary
+http://svn.stu.cn.ua/svn/rada
+add
+
+
+
+
+
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+71bc3adf-b539-e011-869f-0018f311b54d
+

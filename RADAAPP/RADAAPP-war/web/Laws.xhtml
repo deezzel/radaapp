@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.prime.com.tr/ui"
+      xmlns:c="http://java.sun.com/jsp/jstl/core">
+    <ui:composition template="/template.xhtml">
+        <ui:define name="body">
+            <h:form prependId="false">
+                <p:panel id="id_panell">
+                    <p:dataGrid value="#{lawsmb_main.lstLaw}" var="laws" columns="1"  
+                                rows="4" paginator="true" effect="true" 
+                                paginatorPosition="bottom"
+                                paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"  
+                                rowsPerPageTemplate="2,4,10">
+                        <p:column>
+                            <strong><h:outputText value="#{laws.title}" style="float: left" /></strong>
+                            <h:outputLink value="Laws_Comment.xhtml" style="float: right" styleClass="ll">
+                                <f:param name="id_law" value="#{laws.id}"/>
+                                <h:outputText value="подробней"/>
+                            </h:outputLink>
+                            <br></br>
+                            <h:outputText value="#{laws.descript}..." style="float: left; text-align: left" escape="false"/>
+                            <c:if test="#{!mainMB.deputatos}">
+                                <p:button outcome="UpdateLaw" image="ui-icon-pencil" title="Редактировать" style="float: right">
+                                    <f:param name="id_laws" value="#{laws.id}"/>
+                                </p:button>
+
+                                <p:commandButton title="Удалить" ajax="true" image="ui-icon-trash" onclick="confirmation.show()" style="float: right; padding-right: 10px">
+                                    <f:setPropertyActionListener target="#{lawsmb_main.id_law}" value="#{laws.id}"/>
+                                </p:commandButton>
+
+                            </c:if>
+                            
+                            <!--                         <p:separator style="width:50%; height:5px" />-->
+                        </p:column>
+                    </p:dataGrid> 
+                    
+                     <p:confirmDialog message="Вы уверены что хотите удалить закон?"  
+                                     header="Удаление" widgetVar="confirmation" appendToBody="true"> 
+                        
+                        <p:commandButton value="Да" ajax="true" actionListener="#{lawsmb_main.delLaws}" update="id_panell" onclick="confirmation.hide()"/>
+                       
+                        <p:commandButton value="Отмена" onclick="confirmation.hide()" />                    
+                    </p:confirmDialog>
+                    
+                    <c:if test="${!mainMB.deputatos}">
+                        <p:button title="Добавить" value="Добавить закон" outcome="AddLaw_Deputatos" image="ui-icon-plus"  style="float: right"/>
+                    </c:if>
+                </p:panel>
+            </h:form> 
+
+        </ui:define>
+
+    </ui:composition>
+</html>

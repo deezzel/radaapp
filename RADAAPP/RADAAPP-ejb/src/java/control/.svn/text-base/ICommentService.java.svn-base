@@ -1,0 +1,19 @@
+package control;
+
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+//package control.iservices;
+import model.Comment;
+import java.util.List;
+
+/**
+ *
+ * @author Julia
+ */
+public interface ICommentService {
+    
+   public List<Comment> getByPublication (Long id_pub);
+         
+}

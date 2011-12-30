@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.prime.com.tr/ui"
+      xmlns:c="http://java.sun.com/jsp/jstl/core">
+    <head>
+        <title>TODO supply a title</title>
+    </head>
+    <body>
+       <center><br><br><br>
+            <h2><h:outputText value="Please Login"/></h2>
+            <form action="j_security_check">
+                <h:panelGrid columns="2" bgcolor="#eff5fa" cellspacing="5" frame="box">
+                <h:outputLabel value="User ID:"/>
+                <h:inputText id="j_username" tabindex="1" />
+                <h:outputLabel value="Password:"/>
+                <h:inputSecret id="j_password"/>
+                <h:outputLabel value=""/>
+                <h:commandButton id="login" value="Login"/>
+            </h:panelGrid>
+            </form>
+            </br></br></br></center>
+    </body>
+</html>

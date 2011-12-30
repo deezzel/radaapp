@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.prime.com.tr/ui">
+    <h:head>
+        <p:resources/>
+
+        <title>Login</title>
+        <!-- <h:head>-->
+
+        <p:resources/>
+        <h:form>
+            <p:messages id="msg" showDetail="false"/>      
+            <p:panel header="Enter your password and login">  
+                <h:panelGrid columns="2">  
+
+                    <h:outputText value="Login:" />  
+                    <h:inputText value="#{UserManagedBean.login}"/>
+
+                    <h:outputText value="Password: " />  
+                    <p:password value="#{UserManagedBean.password}" minLength="1" />  
+
+                    <!--<p:commandButton value="Press here" update="msg" actionListener="">
+                       <f:attribute name="password" value="password" />
+                          <f:attribute name="login" value="login" />  
+                    </p:commandButton>-->
+                    <h:commandButton value="Enter!" action="#{UserManagedBean.checkPasswd}">
+                    </h:commandButton>
+                <!--    <h:outputText value="#{UserManagedBean.mess}"/>  -->             
+                </h:panelGrid>  
+            </p:panel>  
+        </h:form>
+
+    </h:head>
+    <h:body>
+
+    </h:body>
+</html>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.prime.com.tr/ui"
+      xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="body">
+            <h:form prependId="false">
+                <p:panel id="panel_comm">
+                    <p:messages id="msg" showDetail="false"/>
+                <strong><h:outputText value="#{articlemb.curpublic.title}" style="float: left" /></strong>
+                <br></br>
+                <h:outputText value="#{articlemb.curpublic.text}" style="float: left" escape="false" />
+                <br></br>
+                <p:dataGrid value="#{articlemb.lstComm}" var="comment" columns="1"
+                            rows="5" paginator="false" id="lst_comm">
+                    <p:column>
+                        <strong><h:outputText value="#{comment.avtor.login} #{comment.datecomm.toString()}" style="float: left" /></strong>
+                        <br></br>
+                        <h:outputText value="#{comment.text}" style="text-align: left; float: left"/>
+                        
+                        <p:commandButton title="Удалить" ajax="true" image="ui-icon-trash" update="panel_comm" style="float: right" action="#{articlemb.delComment()}" disabled="#{comment.avtor.login!=userManagedBean.currentUser.login}">
+                            <f:setPropertyActionListener target="#{articlemb.id_comm}" value="#{comment.id}" />
+                        </p:commandButton>
+                      
+                        <br></br>
+                        <p:separator style="width:100%;height:5px" />
+                    </p:column>
+
+                </p:dataGrid>
+                
+                <p:inputText  value="#{articlemb.currComm.text}" disabled="#{articlemb.register}" />
+                <p:commandButton action="#{articlemb.addComment()}" update="lst_comm" value="Добавить комментарий" style="float: right" disabled="#{articlemb.register}"/>
+                </p:panel>
+            </h:form>
+        </ui:define>
+
+    </ui:composition>
+</html>
